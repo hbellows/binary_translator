@@ -31,9 +31,22 @@ class BinaryTranslator
     }
   end
 
-  def translate(input)
-    input.downcase.chars.map do |letter|
+  def translate(text_input)
+    text_input.downcase.chars.map do |letter|
       @alpha_to_binary[letter]
     end.join
+  end
+
+  # def translate_to_text(binary_input)
+  #   letters = binary_input.chars
+  #   letters.map do |letter|
+  #     letter.slice(0..5)
+  #     require "pry"; binding.pry
+  #   end.join
+  # end
+
+  def translate_to_text(binary_input)
+    binary_input.split.up
+
   end
 end
