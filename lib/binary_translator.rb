@@ -37,16 +37,11 @@ class BinaryTranslator
     end.join
   end
 
-  # def translate_to_text(binary_input)
-  #   letters = binary_input.chars
-  #   letters.map do |letter|
-  #     letter.slice(0..5)
-  #     require "pry"; binding.pry
-  #   end.join
-  # end
-
   def translate_to_text(binary_input)
-    binary_input.split.up
-
+    inverted_map = @alpha_to_binary.invert
+     letter = binary_input.scan(/....../)
+      letter.map do |binary|
+        inverted_map[binary]
+    end.join
   end
 end
