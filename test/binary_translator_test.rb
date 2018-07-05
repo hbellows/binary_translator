@@ -41,4 +41,18 @@ class BinaryTranslatorTest < Minitest::Test
     assert_equal "000000", bt.translate(" ")
   end
 
+  def test_it_can_ignore_character_symbols
+    bt = BinaryTranslator.new
+
+    assert_equal "", bt.translate("!@{$#%^&*()}")
+  end
+
+  def test_it_can_translate_a_simple_sentence
+    bt = BinaryTranslator.new
+
+    result = "001000000101001100001100001111000000010111001111010010001100000100"
+
+    assert_equal result, bt.translate("Hello World!")
+  end
+
 end
