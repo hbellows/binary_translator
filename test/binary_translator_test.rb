@@ -55,4 +55,12 @@ class BinaryTranslatorTest < Minitest::Test
     assert_equal result, bt.translate("Hello World!")
   end
 
+  def test_it_can_translate_from_binary_back_to_text
+    bt = BinaryTranslator.new
+
+    binary_input = "001000000101001100001100001111000000010111001111010010001100000100"
+
+    assert_equal "hello world", bt.translate_to_text(binary_input)
+  end
+
 end
