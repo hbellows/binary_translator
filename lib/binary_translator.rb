@@ -38,10 +38,9 @@ class BinaryTranslator
   end
 
   def translate_to_text(binary_input)
-    inverted_map = @alpha_to_binary.invert
      letter = binary_input.scan(/....../)
       letter.map do |binary|
-        inverted_map[binary]
+        @alpha_to_binary.invert[binary]
     end.join
   end
 end
