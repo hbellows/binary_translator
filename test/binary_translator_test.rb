@@ -27,8 +27,8 @@ class BinaryTranslatorTest < Minitest::Test
   def test_it_can_translate_capital_letters
     bt = BinaryTranslator.new
 
-    assert_equal "000001", bt.translate("a")
     assert_equal "000001", bt.translate("A")
+    assert_equal "011010", bt.translate("Z")
 
     result = "010100010101010010001001001110000111"
 
